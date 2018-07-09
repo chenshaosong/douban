@@ -1,4 +1,5 @@
 <template>
+  <router-link :to="{name:'Detail',params:{mid:aid}}">
     <div class="list">
       <img :src="images" alt="图片">
       <p class="title">{{title}}</p>
@@ -16,11 +17,12 @@
         暂无评分
       </div>
     </div>
+  </router-link>
 </template>
 
 <script>
     export default {
-      props:['title','average','images'],
+      props:['title','average','images','aid'],
       data(){
         return {
           star1:true,
@@ -63,49 +65,52 @@
 </script>
 
 <style scoped lang="scss">
-.list{
-  width:1rem;
-  padding:0.06rem 0 0.12rem;
-  margin-right:0.08rem;
-  img{
-    width:1rem;
-    height:1.43rem;
-  }
-  .title{
-    font-size:0.14rem;
-    color:#111111;
-    line-height:0.32rem;
-    text-align:center;
-  }
-  .score{
-    display: -webkit-flex;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-    .xingxing{
-      display: -webkit-flex;
-      margin-right:0.03rem;
-      span{
-        width:0.1rem;
-        height:0.1rem;
-        background:url(../../assets/img/movie-hx.png);
-        background-size:cover;
+  a{
+    .list{
+      width:1rem;
+      padding:0.06rem 0 0.12rem;
+      margin-right:0.08rem;
+      img{
+        width:1rem;
+        height:1.43rem;
       }
-      .fail{
-        width:0.1rem;
-        height:0.1rem;
-        background:url(../../assets/img/movie-bx.png);
-        background-size:cover;
+      .title{
+        font-size:0.14rem;
+        color:#111111;
+        line-height:0.32rem;
+        text-align:center;
+      }
+      .score{
+        display: -webkit-flex;
+        -webkit-justify-content: center;
+        -webkit-align-items: center;
+        .xingxing{
+          display: -webkit-flex;
+          margin-right:0.03rem;
+          span{
+            width:0.1rem;
+            height:0.1rem;
+            background:url(../../assets/img/movie-hx.png);
+            background-size:cover;
+          }
+          .fail{
+            width:0.1rem;
+            height:0.1rem;
+            background:url(../../assets/img/movie-bx.png);
+            background-size:cover;
+          }
+        }
+        .grade{
+          color:#bcaab1;
+          font-size:0.09rem;
+        }
+      }
+      .scoreh{
+        font-size:0.14rem;
+        text-align:center;
+        color:#bcaab1;
+        /*display: none;*/
       }
     }
-   .grade{
-     color:#bcaab1;
-     font-size:0.09rem;
-   }
   }
-  .scoreh{
-    font-size:0.14rem;
-    text-align:center;
-    /*display: none;*/
-  }
-}
 </style>

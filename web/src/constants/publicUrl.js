@@ -8,6 +8,7 @@ var StaticUrl = {
   book:"https://api.douban.com/v2/book/search?q=",
   movie:"https://api.douban.com/v2/movie/search?q=",
   music:"https://api.douban.com/v2/music/search?q=",
-  radio:"https://www.apiopen.top/satinGodApi?type=1&page=1"
+  radio:"https://www.apiopen.top/satinGodApi?type=1&page=1",
+  detailmovie:"https://api.douban.com/v2/movie/subject/"
 };
 module.exports = StaticUrl;

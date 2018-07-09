@@ -8,23 +8,23 @@
     </div>
     <div class="nav">
       <ul class="nav_bd">
-        <li :class="{active:num === 0}" @click="change(0)">
+        <li :class="{active:num == 0}" @click="change(0)">
           <router-link to="/index"><i class="iconfont icon-panel"></i> <p>第一个</p></router-link>
           <span></span>
         </li>
-        <li :class="{active:num === 1}" @click="change(1)">
-          <router-link to=""><i class="iconfont icon-caidan"></i> <p>第一个</p></router-link>
+        <li :class="{active:num == 1}" @click="change(1)">
+          <router-link to="/tables"><i class="iconfont icon-caidan"></i> <p>tables</p></router-link>
           <span></span>
         </li>
-        <li :class="{active:num === 2}" @click="change(2)">
-          <router-link to="/charts"><i class="iconfont icon-tubiaoqiehuan"></i> <p>第一个</p></router-link>
+        <li :class="{active:num == 2}" @click="change(2)">
+          <router-link to="/charts"><i class="iconfont icon-tubiaoqiehuan"></i> <p>charts</p></router-link>
           <span></span>
         </li>
-        <li :class="{active:num === 3}" @click="change(3)">
-          <router-link to=""><i class="iconfont icon-icon8"></i> <p>第一个</p></router-link>
+        <li :class="{active:num == 3}" @click="change(3)">
+          <router-link to="/icons"><i class="iconfont icon-icon8"></i> <p>icons</p></router-link>
           <span></span>
         </li>
-        <li :class="{active:num === 4 }" @click="change(4)">
+        <li :class="{active:num == 4 }" @click="change(4)">
           <router-link to=""><i class="iconfont icon-7"></i> <p>第一个</p></router-link>
           <span></span>
         </li>
@@ -38,11 +38,13 @@
         name: "commen",
       computed:{
           num(){
-            return this.$store.state.commenNum;
+            //数据从sessionStorage中拿到
+            return this.$store.getters.changeComNum
           }
       },
       methods:{
         change(index){
+          console.log(index);
           this.$store.commit('comChange',index);
         }
       }

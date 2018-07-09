@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store/store'
 import echarts from 'echarts'
+import fullCalendar from 'vue-fullcalendar'
 
+Vue.component('full-calendar', fullCalendar);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

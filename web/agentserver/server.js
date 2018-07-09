@@ -10,14 +10,14 @@ app.all('*', function(req, res, next) {
 });
 app.use('/api',function (req,res) {
   console.log(req.query.name);
-  https.get(req.query.name,function (ress) {
+  https.get('https://api.douban.com/v2/movie/in_theaters',function (ress) {
     var datas = '';
     ress.on('data',function (data){
       datas += data;
   });
     ress.on('end',function () {
       res.json(JSON.parse(datas.toString()))
-      console.log(datas);
+      // console.log(JSON.parse(datas.toString()));
     })
   });
 });

@@ -6,6 +6,8 @@ import Radio from '../pages/radio'
 import Steam from '../pages/steam'
 import Search from '../pages/search'
 import Result from '../pages/result'
+import Detail from '../pages/detail'
+import Login from '../pages/login'
 
 Vue.use(Router)
 
@@ -13,8 +15,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Movie',
-      component: Movie
+      name: 'Login',
+      component: Login
     },
     {
       path: '/movie',
@@ -45,6 +47,16 @@ export default new Router({
       path: '/result',
       name: 'Result',
       component: Result
+    },
+    {
+      path:'/detail/:mid',
+      name:"Detail",
+      component:Detail
+    },
+    {
+      path:'/login',
+      name:"Login",
+      component:Login
     }
   ]
 })

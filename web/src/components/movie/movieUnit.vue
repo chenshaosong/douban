@@ -5,7 +5,7 @@
         <span>更多</span>
       </div>
       <div class="main">
-        <movie-unit-list :key="index" v-for="(obj,index) in objdata.subjects" :title="obj.title" :average="obj.rating.average" :images="obj.images.small"></movie-unit-list>
+        <movie-unit-list :key="index" v-for="(obj,index) in objdata.subjects" :aid="obj.id" :title="obj.title" :average="obj.rating.average" :images="obj.images.small"></movie-unit-list>
       </div>
     </div>
 </template>

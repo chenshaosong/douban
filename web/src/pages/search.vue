@@ -84,7 +84,12 @@
             var that = this;
             document.onkeydown = function (ev) {
               if (ev.keyCode === 13){
-                that.$router.push({ name: 'Result', params: { val: that.$refs.search.value }})
+                if (!that.$refs.search.value){
+                  return
+                }else{
+                  that.$router.push({ name: 'Result', params: { val: that.$refs.search.value }})
+                }
+
               }
             }
           },
